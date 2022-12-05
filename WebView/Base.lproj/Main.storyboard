@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="ieF-FS-Vfi">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="OwX-Kj-3NC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mDP-2p-AAT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-45-jVv">
+                                <rect key="frame" x="5" y="70" width="39.666666666666664" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.left" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu2-YN-oVn">
+                                <rect key="frame" x="54.666666666666671" y="70" width="39.666666666666671" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system"/>
+                            </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="TxB-Vx-trf">
+                                <rect key="frame" x="104.33333333333334" y="59" width="288.66666666666663" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OwX-Kj-3NC" id="KEh-ht-pMr"/>
+                                </connections>
+                            </searchBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzy-bE-zhM">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mEH-w8-dlc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zu2-YN-oVn" firstAttribute="centerY" secondItem="TxB-Vx-trf" secondAttribute="centerY" id="0bW-yQ-LNW"/>
+                            <constraint firstItem="TxB-Vx-trf" firstAttribute="leading" secondItem="Zu2-YN-oVn" secondAttribute="trailing" constant="10" id="6nQ-Eq-8uf"/>
+                            <constraint firstItem="fFa-45-jVv" firstAttribute="centerY" secondItem="Zu2-YN-oVn" secondAttribute="centerY" id="Eip-VB-DNJ"/>
+                            <constraint firstItem="Zzy-bE-zhM" firstAttribute="top" secondItem="TxB-Vx-trf" secondAttribute="bottom" id="F1P-23-FmD"/>
+                            <constraint firstItem="mEH-w8-dlc" firstAttribute="bottom" secondItem="Zzy-bE-zhM" secondAttribute="bottom" id="KXK-0f-vVs"/>
+                            <constraint firstItem="TxB-Vx-trf" firstAttribute="leading" secondItem="Zu2-YN-oVn" secondAttribute="trailing" constant="10" id="UTU-Ef-pwG"/>
+                            <constraint firstItem="Zu2-YN-oVn" firstAttribute="leading" secondItem="fFa-45-jVv" secondAttribute="trailing" constant="10" id="Zyn-ZS-hPB"/>
+                            <constraint firstItem="TxB-Vx-trf" firstAttribute="trailing" secondItem="mEH-w8-dlc" secondAttribute="trailing" id="bHv-hQ-p3v"/>
+                            <constraint firstItem="mEH-w8-dlc" firstAttribute="trailing" secondItem="Zzy-bE-zhM" secondAttribute="trailing" id="bXt-Oy-9VW"/>
+                            <constraint firstItem="fFa-45-jVv" firstAttribute="leading" secondItem="mEH-w8-dlc" secondAttribute="leading" constant="5" id="phH-13-9wp"/>
+                            <constraint firstItem="TxB-Vx-trf" firstAttribute="top" secondItem="mEH-w8-dlc" secondAttribute="top" id="qtq-Nn-Hbx"/>
+                            <constraint firstItem="Zzy-bE-zhM" firstAttribute="leading" secondItem="mEH-w8-dlc" secondAttribute="leading" id="xvU-0X-wXp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="wJ3-fw-aEX" id="hmf-Uv-NW6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDZ-7l-pSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wJ3-fw-aEX">
+                    <connections>
+                        <outlet property="delegate" destination="OwX-Kj-3NC" id="MF2-8W-QRO"/>
+                        <outlet property="searchBar" destination="TxB-Vx-trf" id="TE7-Ui-Dl8"/>
+                        <outlet property="searchContentsController" destination="OwX-Kj-3NC" id="rUd-5f-QnM"/>
+                        <outlet property="searchResultsDataSource" destination="OwX-Kj-3NC" id="red-Aw-F9W"/>
+                        <outlet property="searchResultsDelegate" destination="OwX-Kj-3NC" id="RcY-9X-ke6"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="365.64885496183206" y="-538.02816901408448"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
